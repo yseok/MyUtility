@@ -34,7 +34,7 @@ public class ThreeFragment extends Fragment {
         WebView webView = (WebView) view.findViewById(R.id.webView);
 
 
-        // script 사용 설정 (필수)
+        // 2. script 사용 설정 (필수)
         webView.getSettings().setJavaScriptEnabled(true);
         // 줌사용
         webView.getSettings().setSupportZoom(true);
