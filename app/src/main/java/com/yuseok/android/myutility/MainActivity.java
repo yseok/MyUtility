@@ -93,6 +93,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
+    // PagerAdapter정의
     class PagerAdapter extends FragmentStatePagerAdapter {
         public PagerAdapter(FragmentManager fm) {
             super(fm);
@@ -126,6 +127,7 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
+    // request Code부여
     private final int REQ_CODE = 100;
 
     // 1. 권한체크

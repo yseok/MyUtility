@@ -27,6 +27,8 @@ public class ThreeFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
+
+        // 처음 실행할 때 xml을 inflater로 가져와 객체화 하는 작업
         View view =  inflater.inflate(R.layout.fragment_three, container, false);
 
         // 로직

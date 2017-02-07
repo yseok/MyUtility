@@ -79,6 +79,7 @@ public class FourFragment extends Fragment implements OnMapReadyCallback {
                 && ActivityCompat.checkSelfPermission(getContext(), Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
             return;
         }
+        // 리스너를 계속 연결해 놓으면 리소스를 많이 잡아먹게된다.
         manager.removeUpdates(locationListener);
     }
 
@@ -99,9 +100,13 @@ public class FourFragment extends Fragment implements OnMapReadyCallback {
 
     @Override
     public void onMapReady(GoogleMap googleMap) {
+        // google map 사용
         mMap = googleMap;
+        // 기준 위치 좌표
         LatLng seoul = new LatLng(37.516066, 127.019361); //37.515696, 127.021345 =  대기빌딩
+        // 현재 위치
         mMap.addMarker(new MarkerOptions().position(seoul).title("Marker in seoul"));
+        // 지도 줌 정도
         mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(seoul, 30));
     }
 

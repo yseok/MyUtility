@@ -16,6 +16,7 @@ import java.util.ArrayList;
 /**
  * A simple {@link Fragment} subclass.
  */
+// 버튼 onClickListener상속
 public class OneFragment extends Fragment implements View.OnClickListener {
 
     // 1. 위젯 변수 선언
@@ -41,7 +42,6 @@ public class OneFragment extends Fragment implements View.OnClickListener {
 
         // 처음 실행할 때 xml을 inflater로 가져와 객체화 하는 작업이 실행되고
         // return view; 리턴되어 뷰가 이동되면 값이 저장되지않고 사라진다.
-
         view = inflater.inflate(R.layout.fragment_one, container, false);
 
         // 2. 실제 위젯 주입
