@@ -18,6 +18,10 @@ import android.widget.EditText;
  */
 public class ThreeFragment extends Fragment {
 
+    WebView webView;
+
+    // 일종의 view Holder : 성능이 개선될 여지가 많다.
+    View view;
 
     public ThreeFragment() {
         // Required empty public constructor
@@ -28,12 +32,16 @@ public class ThreeFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
 
+        // Holder처리
+        if(view != null)
+            return view;
+
         // 처음 실행할 때 xml을 inflater로 가져와 객체화 하는 작업
         View view =  inflater.inflate(R.layout.fragment_three, container, false);
 
         // 로직
         // 1. 사용할 위젯을 가져온다.
-        WebView webView = (WebView) view.findViewById(R.id.webView);
+        webView = (WebView) view.findViewById(R.id.webView);
 
 
         // 2. script 사용 설정 (필수)
@@ -51,5 +59,19 @@ public class ThreeFragment extends Fragment {
         webView.loadUrl("http://google.com");
 
         return  view;
+    }
+
+    public boolean goBack() {
+//        webView.goBack();
+//        return webView.canGoBack();
+        // 이렇게 줄일 수 있지만 여럿이할땐 여러사람이 이해해야 하므로 풀어쓰는게 맞다.
+
+        if(webView.canGoBack()) {
+            webView.goBack();
+            return true;
+        } else {
+            return false;
+        }
+
     }
 }
